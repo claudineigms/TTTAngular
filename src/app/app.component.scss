@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+app-board{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: gainsboro;
+}   
