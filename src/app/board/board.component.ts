@@ -9,6 +9,8 @@ export class BoardComponent {
   squares: any[] = new Array();
   xIsNext: boolean | undefined;
   winner: string | undefined | null;
+  oWinnerCount = 0;
+  xWinnerCount = 0;
 
   ngOnInit() {
     this.newGame()
@@ -16,8 +18,22 @@ export class BoardComponent {
 
   newGame() {
     this.squares = Array(9).fill(null)
-    this.winner = null;
-    this.xIsNext = true;
+    if (this.winner != null) {
+      switch (this.winner) {
+        case 'X':
+          this.xIsNext = true;
+          this.xWinnerCount++;
+          break;
+        case 'O':
+          this.xIsNext = false;
+          this.oWinnerCount++;
+          break;
+        default:
+          this.xIsNext = true;
+          break;
+        }
+      }
+    this.winner = null
   }
   
   get player() {
@@ -29,7 +45,6 @@ export class BoardComponent {
       this.squares.splice(idx, 1, this.player)
       this.xIsNext = !this.xIsNext
     }
-
     this.winner = this.calculateWinner();
   }
 

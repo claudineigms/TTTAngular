@@ -2,6 +2,10 @@
     flex: 1 1 auto;
   }
 
+head{
+  background-color: gainsboro;
+}
+
 app-board{
     display: grid;
     justify-content: center;

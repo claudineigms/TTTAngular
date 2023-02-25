@@ -1,4 +1,8 @@
 <button mat-raised-button color="accent" (click)="newGame()">Novo Jogo!</button>
+<mat-card>
+    <mat-card-title><h3>Placar</h3></mat-card-title>
+    <mat-card-subtitle><h3>X: {{ xWinnerCount }} | O: {{ oWinnerCount }}</h3></mat-card-subtitle>
+</mat-card>
 
 <h1>Vez do jogador: {{ player }}</h1>
 <h2 *ngIf="winner">

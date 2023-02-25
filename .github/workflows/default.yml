@@ -26,7 +26,7 @@ jobs:
 
       - name: deploy
         if: success()
-        run: aws s3 sync ./dist/myapp 's3://tttangular'
+        run: aws s3 sync ./dist/TTTInAngular 's3://tttangular'
 
   createInvalidation:
     runs-on: ubuntu-latest
